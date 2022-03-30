@@ -12,7 +12,7 @@ def generate_launch_description():
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
             PathJoinSubstitution(
-                [FindPackageShare("barista_description"), "src", "description", "barista_hexagons_asus_xtion_pro.urdf"]
+                [FindPackageShare("barista_description"), "src", "description", "barista.urdf"]
             ),
         ]
     )
@@ -20,7 +20,7 @@ def generate_launch_description():
     robot_description = {"robot_description": robot_description_content}
 
     pkg_share = launch_ros.substitutions.FindPackageShare(package='barista_description').find('barista_description')
-    default_model_path = os.path.join(pkg_share, 'src/description/barista_hexagons_asus_xtion_pro.urdf')
+    default_model_path = os.path.join(pkg_share, 'src/description/barista.urdf')
     # default_rviz_config_path = os.path.join(pkg_share, 'rviz/diffbot.rviz')
     default_ros2_control_config_path = os.path.join(pkg_share, 'config/rb1_controller.yaml')
 

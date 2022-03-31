@@ -603,6 +603,18 @@
           <output_type>sensor_msgs/LaserScan</output_type>
           <frame_name>laser_sensor_link</frame_name>
         </plugin>
+        <plugin name="slotcar" filename="libslotcar.so">
+          <nominal_drive_speed>0.5</nominal_drive_speed>
+          <nominal_drive_acceleration>0.25</nominal_drive_acceleration>
+          <max_drive_acceleration>0.75</max_drive_acceleration>
+          <nominal_turn_speed>0.6</nominal_turn_speed>
+          <nominal_turn_acceleration>1.5</nominal_turn_acceleration>
+          <max_turn_acceleration>2.0</max_turn_acceleration>
+          <tire_radius>0.1</tire_radius>
+          <base_width>0.3206</base_width>
+          <stop_distance>0.75</stop_distance>
+          <stop_radius>0.75</stop_radius>
+        </plugin>
         <pose>0.103007 0 0.2426 0 -0 0</pose>
       </sensor>
     </link>

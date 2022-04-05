@@ -67,7 +67,7 @@ def generate_launch_description():
         package='gazebo_ros',
         executable='spawn_entity.py',
         # arguments=['-entity', 'barista', '-topic', 'robot_description', '-x 0', '-y 0', '-z 0', '-Y 1.57'],
-        arguments=['-entity', 'barista', '-file', '/home/theconstruct/ros2_ws/src/barista_ros2/barista_description/src/description/barista.sdf', '-x 0', '-y 0', '-z 0', '-Y 1.57'],
+        arguments=['-entity', 'barista', '-file', default_model_path, '-x 0', '-y 0', '-z 0', '-Y 1.57'],
         output='screen'
     )
 

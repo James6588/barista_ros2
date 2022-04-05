@@ -24,6 +24,8 @@ def gen_robot_list(number_of_robots):
 def generate_launch_description():
 
     urdf = os.path.join(get_package_share_directory('barista_description'), 'src/', 'description/', 'barista.urdf')
+    sdf = os.path.join(get_package_share_directory('barista_description'), 'src/', 'description/', 'barista.sdf')
+
     pkg_barista_description = get_package_share_directory('barista_description')
     assert os.path.exists(urdf), "The barista_bot.urdf doesn't exist in "+str(urdf)
 
@@ -38,7 +40,7 @@ def generate_launch_description():
                 PythonLaunchDescriptionSource(os.path.join(pkg_barista_description, 'launch',
                                                            'spawn_barista.launch.py')),
                 launch_arguments={
-                                  'robot_urdf': urdf,
+                                  'robot_urdf': sdf,
                                   'x': TextSubstitution(text=str(robot['x_pose'])),
                                   'y': TextSubstitution(text=str(robot['y_pose'])),
                                   'z': TextSubstitution(text=str(robot['z_pose'])),

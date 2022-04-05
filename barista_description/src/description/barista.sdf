@@ -1,5 +1,41 @@
-<sdf version='1.7'>
+<?xml version="1.0"?>
+
+<sdf version='1.6'>
   <model name='barista'>
+
+    <plugin name="slotcar" filename="libslotcar.so">
+
+      <nominal_drive_speed>0.5</nominal_drive_speed>
+      <nominal_drive_acceleration>0.25</nominal_drive_acceleration>
+      <max_drive_acceleration>0.75</max_drive_acceleration>
+
+      <nominal_turn_speed>0.6</nominal_turn_speed>
+      <nominal_turn_acceleration>1.5</nominal_turn_acceleration>
+      <max_turn_acceleration>2.0</max_turn_acceleration>
+
+      <tire_radius>0.1</tire_radius>
+      <base_width>0.3206</base_width>
+
+      <stop_distance>0.75</stop_distance>
+      <stop_radius>0.75</stop_radius>
+
+      <!-- Can the robot drive backwards -->
+      <reversible>true</reversible>
+
+      <!-- Battery params -->
+      <nominal_voltage>12.0</nominal_voltage>
+      <nominal_capacity>24.0</nominal_capacity>
+      <charging_current>5.0</charging_current>
+
+      <!-- Physical params -->
+      <mass>20.0</mass>
+      <inertia>10.0</inertia>
+      <friction_coefficient>0.22</friction_coefficient>
+
+      <!-- Power systems -->
+      <nominal_power>20.0</nominal_power>
+
+    </plugin>
     <link name='base_footprint'>
       <inertial>
         <pose>0.005304 1.4e-05 0.124445 0 -0 0</pose>
@@ -283,7 +319,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/main_body.dae</uri>
+            <uri>model://barista_description/meshes/main_body.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -292,7 +328,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/stacks/hexagons/plate_bottom.dae</uri>
+            <uri>model://barista_description/meshes/stacks/hexagons/plate_bottom.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -301,7 +337,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/stacks/hexagons/plate_middle.dae</uri>
+            <uri>model://barista_description/meshes/stacks/hexagons/plate_middle.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -310,7 +346,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/barista/BOTTOM_colour.dae</uri>
+            <uri>model://barista_description/meshes/barista/BOTTOM_colour.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -319,7 +355,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/sensors/hokuyo.dae</uri>
+            <uri>model://barista_description/meshes/sensors/hokuyo.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -328,7 +364,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/stacks/hexagons/plate_top.dae</uri>
+            <uri>model://barista_description/meshes/stacks/hexagons/plate_top.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -337,7 +373,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/barista/TOP_colour.dae</uri>
+            <uri>model://barista_description/meshes/barista/TOP_colour.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -346,7 +382,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/barista/bowtie_fixed_colour.dae</uri>
+            <uri>model://barista_description/meshes/barista/bowtie_fixed_colour.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -355,7 +391,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/stacks/hexagons/pole_bottom.dae</uri>
+            <uri>model://barista_description/meshes/stacks/hexagons/pole_bottom.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -364,7 +400,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/stacks/hexagons/pole_bottom.dae</uri>
+            <uri>model://barista_description/meshes/stacks/hexagons/pole_bottom.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -373,7 +409,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/stacks/hexagons/pole_bottom.dae</uri>
+            <uri>model://barista_description/meshes/stacks/hexagons/pole_bottom.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -382,7 +418,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/stacks/hexagons/pole_bottom.dae</uri>
+            <uri>model://barista_description/meshes/stacks/hexagons/pole_bottom.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -391,7 +427,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/stacks/hexagons/pole_bottom.dae</uri>
+            <uri>model://barista_description/meshes/stacks/hexagons/pole_bottom.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -400,7 +436,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/stacks/hexagons/pole_bottom.dae</uri>
+            <uri>model://barista_description/meshes/stacks/hexagons/pole_bottom.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -409,7 +445,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/stacks/hexagons/pole_middle.dae</uri>
+            <uri>model://barista_description/meshes/stacks/hexagons/pole_middle.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -418,7 +454,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/stacks/hexagons/pole_middle.dae</uri>
+            <uri>model://barista_description/meshes/stacks/hexagons/pole_middle.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -427,7 +463,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/stacks/hexagons/pole_middle.dae</uri>
+            <uri>model://barista_description/meshes/stacks/hexagons/pole_middle.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -436,7 +472,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/stacks/hexagons/pole_middle.dae</uri>
+            <uri>model://barista_description/meshes/stacks/hexagons/pole_middle.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -445,7 +481,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/stacks/hexagons/pole_top.dae</uri>
+            <uri>model://barista_description/meshes/stacks/hexagons/pole_top.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -454,7 +490,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/stacks/hexagons/pole_top.dae</uri>
+            <uri>model://barista_description/meshes/stacks/hexagons/pole_top.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -463,7 +499,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/stacks/hexagons/pole_top.dae</uri>
+            <uri>model://barista_description/meshes/stacks/hexagons/pole_top.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -472,7 +508,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/stacks/hexagons/pole_top.dae</uri>
+            <uri>model://barista_description/meshes/stacks/hexagons/pole_top.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -574,7 +610,7 @@
       </sensor>
       <sensor name='lidar' type='ray'>
         <always_on>1</always_on>
-        <visualize>1</visualize>
+        <visualize>0</visualize>
         <update_rate>20</update_rate>
         <ray>
           <scan>
@@ -602,18 +638,6 @@
           </ros>
           <output_type>sensor_msgs/LaserScan</output_type>
           <frame_name>laser_sensor_link</frame_name>
-        </plugin>
-        <plugin name="slotcar" filename="libslotcar.so">
-          <nominal_drive_speed>0.5</nominal_drive_speed>
-          <nominal_drive_acceleration>0.25</nominal_drive_acceleration>
-          <max_drive_acceleration>0.75</max_drive_acceleration>
-          <nominal_turn_speed>0.6</nominal_turn_speed>
-          <nominal_turn_acceleration>1.5</nominal_turn_acceleration>
-          <max_turn_acceleration>2.0</max_turn_acceleration>
-          <tire_radius>0.1</tire_radius>
-          <base_width>0.3206</base_width>
-          <stop_distance>0.75</stop_distance>
-          <stop_radius>0.75</stop_radius>
         </plugin>
         <pose>0.103007 0 0.2426 0 -0 0</pose>
       </sensor>
@@ -678,7 +702,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/wheel.dae</uri>
+            <uri>model://barista_description/meshes/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -743,7 +767,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>file://$(find barista_description)/meshes/wheel.dae</uri>
+            <uri>model://barista_description/meshes/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>

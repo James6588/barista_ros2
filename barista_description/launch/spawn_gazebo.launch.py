@@ -11,7 +11,8 @@ import os
 def generate_launch_description():
 
     pkg_share = launch_ros.substitutions.FindPackageShare(package='barista_description').find('barista_description')
-    default_model_path = os.path.join(pkg_share, 'src/description/barista.urdf')
+    default_model_path = os.path.join(pkg_share, 'src/description/barista.sdf')
+    default_urdf_model_path = os.path.join(pkg_share, 'src/description/barista.urdf')
 
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
     my_package_name = "barista_description"
@@ -31,9 +32,9 @@ def generate_launch_description():
         os.environ['GAZEBO_MODEL_PATH'] =  install_dir + "/share" + ':' + gazebo_models_path
 
     if 'GAZEBO_PLUGIN_PATH' in os.environ:
-        os.environ['GAZEBO_PLUGIN_PATH'] = os.environ['GAZEBO_PLUGIN_PATH'] + ':' + install_dir + '/lib' + ':' + gazebo_plugins_name_path_install_dir + '/lib'
+        os.environ['GAZEBO_PLUGIN_PATH'] = os.environ['GAZEBO_PLUGIN_PATH'] + ':' + install_dir + '/lib' + ':' + gazebo_plugins_name_path_install_dir + '/lib' 
     else:
-        os.environ['GAZEBO_PLUGIN_PATH'] = install_dir + '/lib' + ':' + gazebo_plugins_name_path_install_dir + '/lib'
+        os.environ['GAZEBO_PLUGIN_PATH'] = install_dir + '/lib' + ':' + gazebo_plugins_name_path_install_dir + '/lib' + '/rmf_robot_sim_gazebo_plugins'
 
     
 
@@ -45,7 +46,7 @@ def generate_launch_description():
     robot_state_publisher_node = launch_ros.actions.Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
-        parameters=[{'robot_description': Command(['xacro ', LaunchConfiguration('model')])}],
+        parameters=[{'robot_description': Command(['xacro ', LaunchConfiguration('urdf_model')])}],
     )
 
     joint_state_publisher_node = launch_ros.actions.Node(
@@ -65,14 +66,8 @@ def generate_launch_description():
     spawn_entity = launch_ros.actions.Node(
         package='gazebo_ros',
         executable='spawn_entity.py',
-        arguments=['-entity', 'barista', '-topic', 'robot_description', '-x 0', '-y 2', '-z 0'],
-        output='screen'
-    )
-
-    spawn_entity_2 = launch_ros.actions.Node(
-        package='gazebo_ros',
-        executable='spawn_entity.py',
-        arguments=['-entity', 'barista', '-topic', 'robot_description', '-x 0', '-y 0', '-z 0'],
+        # arguments=['-entity', 'barista', '-topic', 'robot_description', '-x 0', '-y 0', '-z 0', '-Y 1.57'],
+        arguments=['-entity', 'barista', '-file', '/home/theconstruct/ros2_ws/src/barista_ros2/barista_description/src/description/barista.sdf', '-x 0', '-y 0', '-z 0', '-Y 1.57'],
         output='screen'
     )
 
@@ -85,12 +80,14 @@ def generate_launch_description():
 
         launch.actions.DeclareLaunchArgument(name='model', default_value=default_model_path,
                                             description='Absolute path to robot urdf file'),
+
+        launch.actions.DeclareLaunchArgument(name='urdf_model', default_value=default_urdf_model_path,
+                                            description='Absolute path to robot urdf file'),
         
         # launch.actions.ExecuteProcess(cmd=['gazebo', '--verbose', '-s', 'libgazebo_ros_init.so', '-s', 'libgazebo_ros_factory.so'], output='screen'),
 
         gazebo,
         spawn_entity,
-        spawn_entity_2,
         joint_state_publisher_node,
         robot_state_publisher_node,
     ])

@@ -32,9 +32,9 @@
   </joint>
   <link name="base_link">
     <visual>
-      <geometry>
+      <geometry>  
         <!-- new mesh -->
-        <mesh filename="file://$(find barista_description)/meshes/main_body.dae"/>
+        <mesh filename="package://barista_description/meshes/main_body.dae"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0.001 0 0.05199"/>
     </visual>
@@ -52,7 +52,7 @@
       <inertia ixx="0.019995" ixy="0.0" ixz="0.0" iyy="0.019995" iyz="0.0" izz="0.03675"/>
     </inertial>
   </link>
-  <joint name="wheel_left_joint" type="continuous">
+  <joint name="joint_tire_left" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_left_link"/>
     <origin rpy="-1.5707963267948966 0 0" xyz="0.00 0.115 0.0250"/>
@@ -61,7 +61,7 @@
   <link name="wheel_left_link">
     <visual>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/wheel.dae"/>
+        <mesh filename="package://barista_description/meshes/wheel.dae"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
@@ -77,7 +77,7 @@
       <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
     </inertial>
   </link>
-  <joint name="wheel_right_joint" type="continuous">
+  <joint name="joint_tire_right" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_right_link"/>
     <origin rpy="-1.5707963267948966 0 0" xyz="0.00 -0.115 0.0250"/>
@@ -86,7 +86,7 @@
   <link name="wheel_right_link">
     <visual>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/wheel.dae"/>
+        <mesh filename="package://barista_description/meshes/wheel.dae"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
@@ -354,7 +354,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/stacks/hexagons/pole_bottom.dae"/>
+        <mesh filename="package://barista_description/meshes/stacks/hexagons/pole_bottom.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -378,7 +378,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/stacks/hexagons/pole_bottom.dae"/>
+        <mesh filename="package://barista_description/meshes/stacks/hexagons/pole_bottom.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -402,7 +402,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/stacks/hexagons/pole_bottom.dae"/>
+        <mesh filename="package://barista_description/meshes/stacks/hexagons/pole_bottom.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -426,7 +426,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/stacks/hexagons/pole_bottom.dae"/>
+        <mesh filename="package://barista_description/meshes/stacks/hexagons/pole_bottom.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -450,7 +450,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/stacks/hexagons/pole_bottom.dae"/>
+        <mesh filename="package://barista_description/meshes/stacks/hexagons/pole_bottom.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -474,7 +474,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/stacks/hexagons/pole_bottom.dae"/>
+        <mesh filename="package://barista_description/meshes/stacks/hexagons/pole_bottom.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -498,7 +498,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/stacks/hexagons/plate_bottom.dae"/>
+        <mesh filename="package://barista_description/meshes/stacks/hexagons/plate_bottom.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -522,7 +522,7 @@
     <visual>
       <origin rpy="0 3.141592653589793 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/stacks/hexagons/pole_middle.dae"/>
+        <mesh filename="package://barista_description/meshes/stacks/hexagons/pole_middle.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -546,7 +546,7 @@
     <visual>
       <origin rpy="0 3.141592653589793 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/stacks/hexagons/pole_middle.dae"/>
+        <mesh filename="package://barista_description/meshes/stacks/hexagons/pole_middle.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -570,7 +570,7 @@
     <visual>
       <origin rpy="0 3.141592653589793 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/stacks/hexagons/pole_middle.dae"/>
+        <mesh filename="package://barista_description/meshes/stacks/hexagons/pole_middle.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -594,7 +594,7 @@
     <visual>
       <origin rpy="0 3.141592653589793 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/stacks/hexagons/pole_middle.dae"/>
+        <mesh filename="package://barista_description/meshes/stacks/hexagons/pole_middle.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -618,7 +618,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/stacks/hexagons/plate_middle.dae"/>
+        <mesh filename="package://barista_description/meshes/stacks/hexagons/plate_middle.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -642,7 +642,7 @@
     <visual>
       <origin rpy="0 0 0" xyz=" 0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/stacks/hexagons/pole_top.dae"/>
+        <mesh filename="package://barista_description/meshes/stacks/hexagons/pole_top.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -666,7 +666,7 @@
     <visual>
       <origin rpy="0 0 0" xyz=" 0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/stacks/hexagons/pole_top.dae"/>
+        <mesh filename="package://barista_description/meshes/stacks/hexagons/pole_top.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -690,7 +690,7 @@
     <visual>
       <origin rpy="0 0 0" xyz=" 0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/stacks/hexagons/pole_top.dae"/>
+        <mesh filename="package://barista_description/meshes/stacks/hexagons/pole_top.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -714,7 +714,7 @@
     <visual>
       <origin rpy="0 0 0" xyz=" 0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/stacks/hexagons/pole_top.dae"/>
+        <mesh filename="package://barista_description/meshes/stacks/hexagons/pole_top.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -742,7 +742,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/stacks/hexagons/plate_top.dae"/>
+        <mesh filename="package://barista_description/meshes/stacks/hexagons/plate_top.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -761,7 +761,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/barista/TOP_colour.dae"/>
+        <mesh filename="package://barista_description/meshes/barista/TOP_colour.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -785,7 +785,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/barista/bowtie_fixed_colour.dae"/>
+        <mesh filename="package://barista_description/meshes/barista/bowtie_fixed_colour.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -809,7 +809,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/barista/BOTTOM_colour.dae"/>
+        <mesh filename="package://barista_description/meshes/barista/BOTTOM_colour.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -844,7 +844,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find barista_description)/meshes/sensors/hokuyo.dae"/>
+        <mesh filename="package://barista_description/meshes/sensors/hokuyo.dae"/>
       </geometry>
     </visual>
   </link>
@@ -857,7 +857,7 @@
   <gazebo reference="laser_sensor_link">
     <sensor name="lidar" type="ray">
         <always_on>true</always_on>
-        <visualize>true</visualize>
+        <visualize>false</visualize>
         <update_rate>20</update_rate>
         <ray>
             <scan>
@@ -887,5 +887,17 @@
             <frame_name>laser_sensor_link</frame_name>
         </plugin>
     </sensor>
+    <plugin name="slotcar" filename="libslotcar.so">
+      <nominal_drive_speed>0.5</nominal_drive_speed>
+      <nominal_drive_acceleration>0.25</nominal_drive_acceleration>
+      <max_drive_acceleration>0.75</max_drive_acceleration>
+      <nominal_turn_speed>0.6</nominal_turn_speed>
+      <nominal_turn_acceleration>1.5</nominal_turn_acceleration>
+      <max_turn_acceleration>2.0</max_turn_acceleration>
+      <tire_radius>0.1</tire_radius>
+      <base_width>0.3206</base_width>
+      <stop_distance>0.75</stop_distance>
+      <stop_radius>0.75</stop_radius>
+    </plugin>
   </gazebo>
 </robot>

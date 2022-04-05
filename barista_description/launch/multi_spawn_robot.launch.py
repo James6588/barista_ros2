@@ -28,7 +28,7 @@ def generate_launch_description():
     assert os.path.exists(urdf), "The barista_bot.urdf doesn't exist in "+str(urdf)
 
     # Names and poses of the robots
-    robots = gen_robot_list(10)
+    robots = gen_robot_list(2)
 
     # We create the list of spawn robots commands
     spawn_robots_cmds = []
@@ -36,7 +36,7 @@ def generate_launch_description():
         spawn_robots_cmds.append(
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(os.path.join(pkg_barista_description, 'launch',
-                                                           'spawn_gazebo.launch.py')),
+                                                           'spawn_barista.launch.py')),
                 launch_arguments={
                                   'robot_urdf': urdf,
                                   'x': TextSubstitution(text=str(robot['x_pose'])),

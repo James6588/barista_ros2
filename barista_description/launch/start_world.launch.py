@@ -19,6 +19,10 @@ def generate_launch_description():
     gazebo_plugins_name = "gazebo_plugins"
     gazebo_plugins_name_path_install_dir = get_package_prefix(gazebo_plugins_name)
 
+    plugin_pkg = "rmf_robot_sim_gazebo_plugins"
+    plugin_dir = get_package_prefix(plugin_pkg)
+
+
 
     # Set the path to the WORLD model files. Is to find the models inside the models folder in uniclicle_robot_pkg package
     gazebo_models_path = os.path.join(pkg_barista_gazebo, 'models')
@@ -32,7 +36,7 @@ def generate_launch_description():
     if 'GAZEBO_PLUGIN_PATH' in os.environ:
         os.environ['GAZEBO_PLUGIN_PATH'] = os.environ['GAZEBO_PLUGIN_PATH'] + ':' + install_dir + '/lib' + ':' + gazebo_plugins_name_path_install_dir + '/lib'
     else:
-        os.environ['GAZEBO_PLUGIN_PATH'] = install_dir + '/lib' + ':' + gazebo_plugins_name_path_install_dir + '/lib' + '/rmf_robot_sim_gazebo_plugins'
+        os.environ['GAZEBO_PLUGIN_PATH'] = install_dir + '/lib' + ':' + plugin_dir + '/lib' + '/rmf_robot_sim_gazebo_plugins'
 
     
 

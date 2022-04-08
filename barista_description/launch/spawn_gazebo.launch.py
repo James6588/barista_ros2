@@ -16,8 +16,10 @@ def generate_launch_description():
 
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
     my_package_name = "barista_description"
+    plugin_pkg = "rmf_robot_sim_gazebo_plugins"
     pkg_barista_gazebo = get_package_share_directory(my_package_name)
     install_dir = get_package_prefix(my_package_name)
+    plugin_dir = get_package_prefix(plugin_pkg)
 
     gazebo_plugins_name = "gazebo_plugins"
     gazebo_plugins_name_path_install_dir = get_package_prefix(gazebo_plugins_name)
@@ -34,7 +36,7 @@ def generate_launch_description():
     if 'GAZEBO_PLUGIN_PATH' in os.environ:
         os.environ['GAZEBO_PLUGIN_PATH'] = os.environ['GAZEBO_PLUGIN_PATH'] + ':' + install_dir + '/lib' + ':' + gazebo_plugins_name_path_install_dir + '/lib' 
     else:
-        os.environ['GAZEBO_PLUGIN_PATH'] = install_dir + '/lib' + ':' + gazebo_plugins_name_path_install_dir + '/lib' + '/rmf_robot_sim_gazebo_plugins'
+        os.environ['GAZEBO_PLUGIN_PATH'] = install_dir + '/lib' + ':' + plugin_dir + '/lib' + '/rmf_robot_sim_gazebo_plugins'
 
     
 

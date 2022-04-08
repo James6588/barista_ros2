@@ -16,7 +16,7 @@ def gen_robot_list(number_of_robots):
     for i in range(number_of_robots):
         robot_name = "barista"+str(i)
         x_pos = float(i)
-        robots.append({'name': robot_name, 'x_pose': x_pos, 'y_pose': 0.0, 'z_pose': 0.01})
+        robots.append({'name': robot_name, 'x_pose': x_pos, 'y_pose': 0.0, 'z_pose': 0.01, 'Y_pose': 1.4})
 
 
     return robots 
@@ -44,6 +44,7 @@ def generate_launch_description():
                                   'x': TextSubstitution(text=str(robot['x_pose'])),
                                   'y': TextSubstitution(text=str(robot['y_pose'])),
                                   'z': TextSubstitution(text=str(robot['z_pose'])),
+                                  'Y': TextSubstitution(text=str(robot['Y_pose'])),
                                   'robot_name': robot['name'],
                                   'robot_namespace': robot['name']
                                   }.items()))

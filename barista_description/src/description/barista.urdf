@@ -330,21 +330,34 @@
       </imu>
     </sensor>
   </gazebo>
-  <!-- <gazebo>
-    <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller">
-      <alwaysOn>true</alwaysOn>
-      <updateRate>20</updateRate>
-      <leftJoint>wheel_right_joint</leftJoint>
-      <rightJoint>wheel_left_joint</rightJoint>
-      <wheelSeparation>.230</wheelSeparation>
-      <wheelDiameter>0.070</wheelDiameter>
-      <torque>1.0</torque>
-      <commandTopic>cmd_vel</commandTopic>
-      <odometryTopic>odom</odometryTopic>
-      <odometryFrame>odom</odometryFrame>
-      <robotBaseFrame>base_footprint</robotBaseFrame>
+  <gazebo>
+    <plugin name='diff_drive' filename='libgazebo_ros_diff_drive.so'>
+        <ros>
+          <namespace>/</namespace>
+        </ros>
+
+        <!-- wheels -->
+        <left_joint>joint_tire_left</left_joint>
+        <right_joint>joint_tire_right</right_joint>
+
+        <!-- kinematics -->
+        <wheel_separation>0.4</wheel_separation>
+        <wheel_diameter>0.1</wheel_diameter>
+
+        <!-- limits -->
+        <max_wheel_torque>20</max_wheel_torque>
+        <max_wheel_acceleration>1.0</max_wheel_acceleration>
+
+        <!-- output -->
+        <publish_odom>true</publish_odom>
+        <publish_odom_tf>false</publish_odom_tf>
+        <publish_wheel_tf>true</publish_wheel_tf>
+
+        <odometry_frame>odom</odometry_frame>
+        <robot_base_frame>base_link</robot_base_frame>
     </plugin>
-  </gazebo> -->
+</gazebo>
+
   <joint name="pole_bottom_0_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0.12 0.082 0.1028"/>
     <parent link="base_link"/>

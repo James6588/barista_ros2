@@ -4,6 +4,7 @@
 
 import argparse
 import os
+import re
 import xml.etree.ElementTree as ET
 
 from ament_index_python.packages import get_package_share_directory
@@ -28,6 +29,9 @@ def main():
                         help='the y component of the initial position [meters]')
     parser.add_argument('-z', type=float, default=0,
                         help='the z component of the initial position [meters]')
+    parser.add_argument('-Y', type=float, default=0,
+                        help='the Yaw component of the initial position [radians]')
+  
 
     args, unknown = parser.parse_known_args()
 
@@ -88,6 +92,8 @@ def main():
     request.initial_pose.position.x = float(args.x)
     request.initial_pose.position.y = float(args.y)
     request.initial_pose.position.z = float(args.z)
+    request.initial_pose.orientation.z = float(args.Y)
+
 
 
     if args.namespace is True:

@@ -31,7 +31,7 @@ def launch_setup(context, *args, **kwargs):
     if extension == "urdf":
         robot_desc_path = os.path.join(get_package_share_directory(
         package_description), 'src', "description", robot_file)
-        robot_desc = xacro.process_file(robot_desc_path)
+        robot_desc = xacro.process_file(robot_desc_path, mappings={'tfpre': barista_name})
     elif extension == "xacro":
         robot_desc_path = os.path.join(get_package_share_directory(
         package_description), 'src', "description", robot_file)

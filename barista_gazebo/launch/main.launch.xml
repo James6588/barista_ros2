@@ -5,7 +5,7 @@
 
     <include file="$(find-pkg-share barista_gazebo)/launch/spawn.launch.xml">
             <arg name="barista_name" value="barista_1"/>
-            <arg name="robot_file" value="barista.sdf"/>
+            <arg name="robot_file" value="barista.urdf"/>
             <arg name="x_spawn" value="0.0"/>
             <arg name="y_spawn" value="0.0"/>
             <arg name="z_spawn" value="0.2"/>
@@ -16,13 +16,13 @@
 
     <include file="$(find-pkg-share barista_gazebo)/launch/spawn.launch.xml">
             <arg name="barista_name" value="barista_2"/>
-            <arg name="robot_file" value="barista.sdf"/>
+            <arg name="robot_file" value="barista.urdf"/>
             <arg name="x_spawn" value="-3.0"/>
             <arg name="y_spawn" value="4.0"/>
             <arg name="z_spawn" value="0.2"/>
             <arg name="roll_spawn" value="0.0"/>
             <arg name="pitch_spawn" value="0.0"/>
-            <arg name="yaw_spawn" value="0.0"/>
+            <arg name="yaw_spawn" value="0.0"/> 
     </include>
 
      <!-- <include file="$(find-pkg-share barista_gazebo)/launch/spawn.launch.xml">

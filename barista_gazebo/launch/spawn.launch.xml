@@ -2,7 +2,7 @@
 <launch>
 
     <arg name="barista_name" default="barista"/>
-    <arg name="robot_file" default="barista.sdf"/>
+    <arg name="robot_file" default="barista.urdf"/>
 
     <arg name="x_spawn" default="0.0"/>
     <arg name="y_spawn" default="0.0"/>
@@ -11,15 +11,16 @@
     <arg name="pitch_spawn" default="0.0"/>
     <arg name="yaw_spawn" default="0.0"/>
 
-    <!-- <include file="$(find-pkg-share barista_description)/launch/robot_state_publisher.launch.py">
-        <arg name="barista_name" value="$(var barista_name)"/>
-        <arg name="robot_file" value="$(var robot_file)"/>
-    </include> -->
-
+    
+    <group>
+        <push-ros-namespace namespace="$(var barista_name)"/>
+        <include file="$(find-pkg-share barista_description)/launch/robot_state_publisher.launch.py">
+            <arg name="barista_name" value="$(var barista_name)"/>
+            <arg name="robot_file" value="$(var robot_file)"/>
+        </include>
+    </group>
 
     <include file="$(find-pkg-share barista_gazebo)/launch/spawn_in_gazebo.launch.py">
-        <!-- <arg name="robot_file" value="$(var robot_file)"/> -->
-        
         <arg name="barista_name" value="$(var barista_name)"/>
         <arg name="x_spawn" value="$(var x_spawn)"/>
         <arg name="y_spawn" value="$(var y_spawn)"/>

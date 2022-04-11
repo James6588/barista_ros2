@@ -900,7 +900,7 @@
             <frame_name>laser_sensor_link</frame_name>
         </plugin>
     </sensor>
-    <plugin name="slotcar" filename="libslotcar.so">
+    <!-- <plugin name="slotcar" filename="libslotcar.so">
       <nominal_drive_speed>0.5</nominal_drive_speed>
       <nominal_drive_acceleration>0.25</nominal_drive_acceleration>
       <max_drive_acceleration>0.75</max_drive_acceleration>
@@ -911,6 +911,6 @@
       <base_width>0.3206</base_width>
       <stop_distance>0.75</stop_distance>
       <stop_radius>0.75</stop_radius>
-    </plugin>
+    </plugin> -->
   </gazebo>
 </robot>

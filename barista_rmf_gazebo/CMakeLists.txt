@@ -99,5 +99,11 @@ endforeach()
 
 install(DIRECTORY
   launch
+  rviz_config
+  rmf_config
+  dashboard_config
+  adapter_config
+  models
+  aseprite_map_drawings
   DESTINATION share/${PROJECT_NAME}
 )

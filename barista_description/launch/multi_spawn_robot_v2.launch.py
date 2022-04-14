@@ -18,7 +18,10 @@ def gen_robot_list(number_of_robots):
     for i in range(number_of_robots):
         robot_name = "barista"+str(i)
         x_pos = float(i)
-        robots.append({'name': robot_name, 'x_pose': x_pos, 'y_pose': 0.0, 'z_pose': 0.01, 'Y_pose': 1.4})
+        if i == 0:
+            robots.append({'name': robot_name, 'x_pose': -3.005785, 'y_pose': 4.017705, 'z_pose': 0.01, 'Y_pose': 0.0})
+        else:
+            robots.append({'name': robot_name, 'x_pose': x_pos, 'y_pose': 0.0, 'z_pose': 0.01, 'Y_pose': 1.4})
 
 
     return robots 

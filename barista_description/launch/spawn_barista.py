@@ -100,8 +100,9 @@ def main():
         node.get_logger().info('spawning `{}` on namespace `{}` at {}, {}, {}'.format(
             args.robot_name, args.robot_namespace, args.x, args.y, args.z))
 
-        request.robot_namespace = args.robot_namespace
-        print(args.robot_namespace)
+        # Deactivated becuase the demos dont have this
+        # request.robot_namespace = args.robot_namespace
+        # print(args.robot_namespace)
 
     else:
         node.get_logger().info('spawning `{}` at {}, {}, {}'.format(

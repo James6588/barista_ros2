@@ -50,10 +50,15 @@ def generate_launch_description():
         )
     )    
 
+    # path_to_world = os.path.join(pkg_barista_gazebo, 'worlds', 'tc_coffeeshop.world')
+
+    pkg_rmf_tc = get_package_share_directory("rmf_tc")
+    path_to_world = os.path.join(pkg_rmf_tc, 'maps','simple', 'bob.world')
+
     return LaunchDescription([
         DeclareLaunchArgument(
           'world',
-          default_value=[os.path.join(pkg_barista_gazebo, 'worlds', 'tc_coffeeshop.world'), ''],
+          default_value=[path_to_world, ''],
           description='SDF world file'),
         gazebo
     ])

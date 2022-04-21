@@ -5,14 +5,11 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Status1
-        - /MarkerArray1
-        - /MarkerArray2
         - /MarkerArray2/Topic1
-        - /MarkerArray3
         - /MarkerArray3/Topic1
-        - /MarkerArray4
         - /MarkerArray4/Topic1
         - /Map1
+        - /Map1/Topic1
         - /Map1/Update Topic1
       Splitter Ratio: 0.5
     Tree Height: 836
@@ -86,7 +83,8 @@ Visualization Manager:
       Enabled: true
       Name: MarkerArray
       Namespaces:
-        {}
+        labels: true
+        map: true
       Topic:
         Depth: 5
         Durability Policy: Transient Local
@@ -114,7 +112,7 @@ Visualization Manager:
       Name: Map
       Topic:
         Depth: 5
-        Durability Policy: Volatile
+        Durability Policy: Transient Local
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
@@ -180,11 +178,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 34.03446578979492
+      Scale: 75.23937225341797
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz_default_plugins)
-      X: 21.15094757080078
-      Y: -16.67951011657715
+      X: 5.55827522277832
+      Y: -5.413631916046143
     Saved: ~
 Window Geometry:
   Displays:

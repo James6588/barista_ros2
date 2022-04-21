@@ -7,7 +7,7 @@ crowd_sim:
   enable: 0
   goal_sets: []
   model_types: []
-  obstacle_set: {class: 1, file_name: Floor1_navmesh.nav, type: nav_mesh}
+  obstacle_set: {class: 1, file_name: L1_navmesh.nav, type: nav_mesh}
   states:
     - {final: 1, goal_set: -1, name: external_static, navmesh_file_name: ""}
   transitions: []
@@ -15,7 +15,7 @@ crowd_sim:
 graphs:
   {}
 levels:
-  Floor1:
+  L1:
     drawing:
       filename: simple1_big.png
     elevation: 0

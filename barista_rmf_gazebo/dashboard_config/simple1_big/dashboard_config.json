@@ -1,20 +1,19 @@
 { 
-  "world_name" : "Simple 1 World",
+  "world_name" : "Simple BIG 1 World",
   "valid_task" : ["Loop", "Clean"],
   "task": {
     "Delivery": {},
     "Loop": {
       "places": [
+        "barista_charging_station",
         "collecting_zone_1",
-        "charging_station",
-        "office_zone_1"
+        "office_zone_1",
+        "warehouse_1"
       ]
     },
     "Clean": {
       "option": [
-        "clean_collecting_zone_1",
-        "clean_charging_station",
-        "clean_office_zone_1"
+        "warehouse_1"
       ]
     },
     "Station": {},

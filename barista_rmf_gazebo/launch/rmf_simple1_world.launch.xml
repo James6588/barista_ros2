@@ -11,7 +11,6 @@
     <arg name="viz_config_file" value ="$(find-pkg-share barista_rmf_gazebo)/rviz_config/$(var map_name).rviz"/>
     <arg name="config_file" value="$(find-pkg-share barista_rmf_gazebo)/rmf_config/$(var map_name).building.yaml"/>
     <arg name="dashboard_config_file" value="$(find-pkg-share barista_rmf_gazebo)/dashboard_config/$(var map_name)/dashboard_config.json"/>
-    <arg name="initial_map" value="Floor1"/>
   </include>
 
   <!-- Barista fleet adapter, and robot state aggregator needed for the Barista slotcar_plugin -->

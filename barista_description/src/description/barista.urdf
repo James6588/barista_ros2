@@ -350,11 +350,11 @@
 
         <!-- output -->
         <publish_odom>true</publish_odom>
-        <publish_odom_tf>false</publish_odom_tf>
+        <publish_odom_tf>true</publish_odom_tf>
         <publish_wheel_tf>true</publish_wheel_tf>
 
         <odometry_frame>odom</odometry_frame>
-        <robot_base_frame>base_link</robot_base_frame>
+        <robot_base_frame>base_footprint</robot_base_frame>
     </plugin>
 </gazebo>
 
@@ -870,7 +870,7 @@
   <gazebo reference="laser_sensor_link">
     <sensor name="lidar" type="ray">
         <always_on>true</always_on>
-        <visualize>false</visualize>
+        <visualize>true</visualize>
         <update_rate>20</update_rate>
         <ray>
             <scan>
@@ -900,17 +900,6 @@
             <frame_name>laser_sensor_link</frame_name>
         </plugin>
     </sensor>
-    <!-- <plugin name="slotcar" filename="libslotcar.so">
-      <nominal_drive_speed>0.5</nominal_drive_speed>
-      <nominal_drive_acceleration>0.25</nominal_drive_acceleration>
-      <max_drive_acceleration>0.75</max_drive_acceleration>
-      <nominal_turn_speed>0.6</nominal_turn_speed>
-      <nominal_turn_acceleration>1.5</nominal_turn_acceleration>
-      <max_turn_acceleration>2.0</max_turn_acceleration>
-      <tire_radius>0.1</tire_radius>
-      <base_width>0.3206</base_width>
-      <stop_distance>0.75</stop_distance>
-      <stop_radius>0.75</stop_radius>
-    </plugin> -->
+
   </gazebo>
 </robot>

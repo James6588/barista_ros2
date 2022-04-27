@@ -1,0 +1,14 @@
+<?xml version='1.0' ?>
+
+<launch>
+  <arg name="gazebo_version" default="11"/>
+
+  <!-- TODO : ADD LAUNCH RMF HERE-->
+
+  <!-- Simulation launch -->
+  <include file="$(find-pkg-share barista_rmf_gazebo)/launch/simulation.launch.xml">
+    <arg name="map_name" value="simple1_big" />
+    <arg name="gazebo_version" value="$(var gazebo_version)" />
+    <arg name="headless" value="0" />
+  </include>
+</launch>

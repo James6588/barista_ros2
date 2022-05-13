@@ -64,13 +64,47 @@
 			</ray>
 			<plugin name="scan" filename="libgazebo_ros_ray_sensor.so">
 				<ros>
+					<namespace>${robot_name}</namespace>
 					<remapping>~/out:=scan</remapping>
 				</ros>
 				<output_type>sensor_msgs/LaserScan</output_type>
-				<frame_name>laser_sensor_link</frame_name>
+				<frame_name>${robot_name}/laser_sensor_link</frame_name>
 			</plugin>
+			
 		</sensor>
   	</gazebo>
+
+	<gazebo>
+		<plugin name='diff_drive' filename='libgazebo_ros_diff_drive.so'>
+			<ros>
+				<namespace>/</namespace>
+				<argument>cmd_vel:=${robot_name}/cmd_vel</argument>
+				<argument>odom:=${robot_name}/odom</argument>
+			</ros>
+
+			<!-- wheels -->
+			<left_joint>${robot_name}/joint_tire_left</left_joint>
+			<right_joint>${robot_name}/joint_tire_right</right_joint>
+
+			<!-- kinematics -->
+			<wheel_separation>0.4</wheel_separation>
+			<wheel_diameter>0.1</wheel_diameter>
+
+			<!-- limits -->
+			<max_wheel_torque>20</max_wheel_torque>
+			<max_wheel_acceleration>1.0</max_wheel_acceleration>
+
+			<!-- output -->
+			<publish_odom>true</publish_odom>
+			<publish_odom_tf>true</publish_odom_tf>
+			<publish_wheel_tf>false</publish_wheel_tf>
+			
+
+			<odometry_frame>odom</odometry_frame>
+			<robot_base_frame>${robot_name}/base_footprint</robot_base_frame>
+		</plugin>
+	</gazebo>
+
   	
   </xacro:macro>
   

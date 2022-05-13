@@ -1,7 +1,10 @@
 <?xml version="1.0"?>
 
 <robot name="kobuki_sim" xmlns:xacro="http://ros.org/wiki/xacro">
-  <xacro:macro name="kobuki_sim">
+
+  <xacro:arg name="robot_name" default="barista_X"/>
+
+  <xacro:macro name="kobuki_sim" params="robot_name">
 	  <gazebo reference="wheel_left_link">
 	    <mu1>1.0</mu1>
 	    <mu2>1.0</mu2>
@@ -146,33 +149,7 @@
 	  </gazebo>
 
 
-	<gazebo>
-		<plugin name='diff_drive' filename='libgazebo_ros_diff_drive.so'>
-			<ros>
-				<namespace>/</namespace>
-			</ros>
 
-			<!-- wheels -->
-			<left_joint>joint_tire_left</left_joint>
-			<right_joint>joint_tire_right</right_joint>
-
-			<!-- kinematics -->
-			<wheel_separation>0.4</wheel_separation>
-			<wheel_diameter>0.1</wheel_diameter>
-
-			<!-- limits -->
-			<max_wheel_torque>20</max_wheel_torque>
-			<max_wheel_acceleration>1.0</max_wheel_acceleration>
-
-			<!-- output -->
-			<publish_odom>true</publish_odom>
-			<publish_odom_tf>true</publish_odom_tf>
-			<publish_wheel_tf>true</publish_wheel_tf>
-
-			<odometry_frame>odom</odometry_frame>
-			<robot_base_frame>base_footprint</robot_base_frame>
-		</plugin>
-	</gazebo>
 	
 	
           

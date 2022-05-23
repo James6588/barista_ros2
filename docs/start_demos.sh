@@ -18,3 +18,4 @@ colcon build --packages-select barista_ros2_ff barista_ros2_navigation nav2_brin
 source install/setup.bash;reset;ros2 launch barista_ros2_ff main_multiple_robots.launch.xml 
 
 source install/setup.bash;reset;ros2 launch barista_ros2_ff start_barista1_nav.launch.xml
+source install/setup.bash;reset;ros2 launch barista_ros2_ff start_barista2_nav.launch.xml

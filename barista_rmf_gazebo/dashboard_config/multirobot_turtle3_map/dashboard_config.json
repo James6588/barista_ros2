@@ -1,0 +1,28 @@
+{ 
+  "world_name" : "Turtle3 World",
+  "valid_task" : ["Loop", "Clean"],
+  "task": {
+    "Delivery": {},
+    "Loop": {
+      "places": [
+        "barista_1_charging_station",
+        "barista_2_charging_station",
+        "spot_1",
+        "spot_2",
+        "spot_3",
+        "spot_4",
+        "target_1",
+        "target_2"
+      ]
+    },
+    "Clean": {
+      "option": [
+        "target_1",
+        "target_2"
+      ]
+    },
+    "Station": {},
+    "Patrol": {},
+    "Charging": {}
+  }
+}

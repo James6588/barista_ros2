@@ -12,7 +12,7 @@ firefox https://open-rmf.github.io/rmf-panel-js/
 
 
 # TESTS for NAvigation 2 multiple robots
-colcon build --packages-select barista_ros2_ff barista_ros2_navigation nav2_bringup
+colcon build --packages-select barista_ros2_ff barista_ros2_navigation nav2_bringup barista_rmf_gazebo
 
 # Start sim
 source install/setup.bash;reset;ros2 launch barista_ros2_ff main_multiple_robots.launch.xml 
@@ -55,16 +55,12 @@ ros2 run ff_examples_ros2 send_path_request.py -f barista -r barista_2 -i 6 -p '
 ros2 run ff_examples_ros2 send_mode_request.py -f barista -r barista_1 -m pause -i 8
 ros2 run ff_examples_ros2 send_mode_request.py -f barista -r barista_1 -m resume -i 9
 
-
-
-
-
-
-
-
-
-
-
-
-
 # Start the RMS system
+
+source install/setup.bash;reset;ros2 launch barista_rmf_gazebo start_rmf_multirobot_turtlebotworld.launch.xml
+
+# Edit TRaffic map
+traffic-editor
+
+# RMF monitor web
+https://open-rmf.github.io/rmf-panel-js/

@@ -1,0 +1,29 @@
+{ 
+  "world_name" : "Tc Coffee Shop World",
+  "valid_task" : ["Loop", "Clean"],
+  "task": {
+    "Delivery": {},
+    "Loop": {
+      "places": [
+        "ch_1",
+        "ch_2",
+        "table_1",
+        "table_2",
+        "table_3",
+        "table_4",
+        "table_5",
+        "table_6",
+        "table_7"
+      ]
+    },
+    "Clean": {
+      "option": [
+        "table_6",
+        "table_7"
+      ]
+    },
+    "Station": {},
+    "Patrol": {},
+    "Charging": {}
+  }
+}

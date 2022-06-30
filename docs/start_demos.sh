@@ -112,3 +112,6 @@ ros2 run ff_examples_ros2 send_destination_request.py -f barista -r barista_2 -x
 
 # Test the RMF
 source install/setup.bash;reset;ros2 launch barista_rmf_gazebo start_rmf_multirobot_tc_caffee_shop_world.launch.xml
+
+# RMF monitor web
+https://open-rmf.github.io/rmf-panel-js/

@@ -33,8 +33,12 @@ source install/setup.bash;reset;ros2 launch barista_ros2_ff start_barista1_nav.l
 source install/setup.bash;reset;ros2 launch barista_ros2_ff start_barista2_nav.launch.xml
 
 # Update
-# Start Sim and Navigation systems
+# Only Simulation an drobot spawn
 source install/setup.bash;reset;ros2 launch barista_ros2_ff main_multiple_robots.launch.xml 
+# Only Nav
+source install/setup.bash;reset;ros2 launch barista_ros2_ff start_barista_navigation.launch.xml
+# Only the client part
+source install/setup.bash;reset;ros2 launch barista_ros2_ff barista_multiple_world_ff_clients.launch.xml
 
 
 ############ FF SERVER CLIENT TESTS
@@ -42,6 +46,8 @@ source install/setup.bash;reset;ros2 launch barista_ros2_ff main_multiple_robots
 # Test the server command sending ( always change the ID, because it ha sto be unique)
 ros2 run ff_examples_ros2 send_destination_request.py -f barista -r barista_1 -x 10.142500 -y -7.412360 --yaw 0.0 -i 1
 ros2 run ff_examples_ros2 send_destination_request.py -f barista -r barista_2 -x 10.246500 -y -11.054800 --yaw 0.0 -i 2
+ros2 run ff_examples_ros2 send_destination_request.py -f barista -r mule_1 -x 8.105859 -y -9.740719 --yaw 0.0 -i 3
+
 
 ros2 run ff_examples_ros2 send_destination_request.py -f barista -r barista_1 -x 11.502300 -y -9.180780 --yaw 0.0 -i 3
 
@@ -58,6 +64,12 @@ ros2 run ff_examples_ros2 send_mode_request.py -f barista -r barista_1 -m resume
 # Start the RMS system
 
 source install/setup.bash;reset;ros2 launch barista_rmf_gazebo start_rmf_multirobot_turtlebotworld.launch.xml
+
+
+
+### COMPILE 
+colcon build --packages-select barista_ros2_ff barista_ros2_navigation barista_description barista_rmf_gazebo rmf_fleet_adapter
+
 
 # Edit TRaffic map
 traffic-editor

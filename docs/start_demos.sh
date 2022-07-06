@@ -33,6 +33,12 @@ source install/setup.bash;reset;ros2 launch barista_ros2_ff start_barista1_nav.l
 source install/setup.bash;reset;ros2 launch barista_ros2_ff start_barista2_nav.launch.xml
 
 # Update
+
+# All toeguether
+source install/setup.bash;reset;ros2 launch barista_ros2_ff main_three_robots_all.launch.xml 
+source install/setup.bash;reset;ros2 launch barista_rmf_gazebo start_rmf_multirobot_turtlebotworld.launch.xml
+https://open-rmf.github.io/rmf-panel-js/
+
 # Only Simulation an drobot spawn
 source install/setup.bash;reset;ros2 launch barista_ros2_ff main_multiple_robots.launch.xml 
 # Only Nav
@@ -68,7 +74,7 @@ source install/setup.bash;reset;ros2 launch barista_rmf_gazebo start_rmf_multiro
 
 
 ### COMPILE 
-colcon build --packages-select barista_ros2_ff barista_ros2_navigation barista_description barista_rmf_gazebo rmf_fleet_adapter
+colcon build --packages-select barista_ros2_ff barista_ros2_navigation barista_description barista_rmf_gazebo rmf_fleet_adapter barista_ros2_navigation
 
 
 # Edit TRaffic map

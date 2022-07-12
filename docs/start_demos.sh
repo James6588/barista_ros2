@@ -40,7 +40,7 @@ source install/setup.bash;reset;ros2 launch barista_rmf_gazebo start_rmf_multiro
 https://open-rmf.github.io/rmf-panel-js/
 
 # All One Robot
-source install/setup.bash;reset;ros2 launch barista_ros2_ff barista_one_world_ff.launch.xml 
+source install/setup.bash;reset;ros2 launch barista_ros2_ff main_one_robot_all.launch.xml 
 
 # Only Simulation an drobot spawn
 source install/setup.bash;reset;ros2 launch barista_ros2_ff main_multiple_robots.launch.xml 

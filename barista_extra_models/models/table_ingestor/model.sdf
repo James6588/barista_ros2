@@ -22,7 +22,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://table_ingestor/meshes/voxeltable.dae</uri>
+            <uri>model://table_ingestor/meshes/voxeltable_nolegs.dae</uri>
           </mesh>
         </geometry>
       </visual>

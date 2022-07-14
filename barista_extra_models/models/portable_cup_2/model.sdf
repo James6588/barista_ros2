@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="portable_cup">
+  <model name="portable_cup_2">
     <static>false</static>
     <link name="link">
       <inertial>
@@ -17,11 +17,11 @@
       </inertial>
 
       
-      <collision name="col_portable_cup">
+      <collision name="col_portable_cup_2">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://portable_cup/meshes/portable_cup_2.dae</uri>
+            <uri>model://portable_cup_2/meshes/portable_cup_2.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -42,11 +42,11 @@
         </surface>
       </collision>
 
-      <visual name="visual_portable_cup">
+      <visual name="visual_portable_cup_2">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://portable_cup/meshes/portable_cup_2.dae</uri>
+            <uri>model://portable_cup_2/meshes/portable_cup_2.dae</uri>
           </mesh>
         </geometry>
       </visual>

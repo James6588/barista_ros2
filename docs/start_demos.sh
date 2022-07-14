@@ -39,6 +39,18 @@ source install/setup.bash;reset;ros2 launch barista_ros2_ff main_three_robots_al
 source install/setup.bash;reset;ros2 launch barista_rmf_gazebo start_rmf_multirobot_turtlebotworld.launch.xml
 https://open-rmf.github.io/rmf-panel-js/
 
+
+
+
+
+
+
+
+# We remove a folder that otherwise gives issues in ROS2 launches
+
+ros2 launch barista_ros2_ff main_one_robot_all.launch.xml 
+
+
 # All One Robot
 source install/setup.bash;reset;ros2 launch barista_ros2_ff main_one_robot_all.launch.xml 
 

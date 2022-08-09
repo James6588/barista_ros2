@@ -1,0 +1,15 @@
+- operation: Add
+  participant_description:
+    name: barista_1
+    group: barista
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: "\x00"
+      vicinity:
+        type: Circle
+        index: "\x01"
+      shape_context:
+        - 0.3
+        - 0.5

@@ -40,12 +40,12 @@
     <gazebo reference="laser_sensor_link">
   		<sensor name="lidar" type="ray">
 			<always_on>true</always_on>
-			<visualize>true</visualize>
+			<visualize>false</visualize>
 			<update_rate>20</update_rate>
 			<ray>
 				<scan>
 					<horizontal>
-					<samples>360</samples>
+					<samples>128</samples>
 					<resolution>1.000000</resolution>
 					<min_angle>0.000000</min_angle>
 					<max_angle>6.280000</max_angle>

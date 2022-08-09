@@ -2,11 +2,8 @@
 <launch>
   <arg name="number_of_robots" default="2"/>
 
-  <!-- Launches World now independently form spawning robot -->
-  <include file="$(find-pkg-share barista_gazebo)/launch/start_world_standalone.launch.py"/>
-
   <!-- launches the basic turtlebot3 world with multiple basic turtlebot -->
-  <include file="$(find-pkg-share barista_gazebo)/launch/multi_barista.launch.xml">
+  <include file="$(find-pkg-share barista_gazebo)/launch/multi_barista_timed.launch.py">
          <arg name="number_of_robots" value="$(var number_of_robots)"/>
   </include>
 

@@ -3,6 +3,7 @@
 <robot name="barista" xmlns:xacro="http://ros.org/wiki/xacro">
 
   <xacro:arg name="robot_name" default="barista_X"/>
+  <xacro:property name="robot_name_prop" value="$(arg robot_name)"/>
 
   <xacro:include filename="$(find barista_description)/robot/common_properties.xacro"/>
   <xacro:include filename="$(find barista_description)/robot/barista_properties.xacro"/>
@@ -14,9 +15,7 @@
   <xacro:include filename="$(find barista_description)/robot/barista_mod.xacro" />
   <xacro:include filename="$(find barista_description)/robot/barista_hokuyo.xacro" />
   
-  <xacro:barista_kobuki robot_name="$(arg robot_name)"/>
-
-  <xacro:property name="robot_name_prop" value="$(arg robot_name)"/>
+  <xacro:barista_kobuki robot_name="$(arg robot_name)"/>  
 
   <xacro:if value="${'barista' in robot_name_prop}">
     <xacro:stack_hexagons parent="base_link"/>

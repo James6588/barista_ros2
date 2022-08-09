@@ -8,6 +8,7 @@ from launch.substitutions import LaunchConfiguration
 from launch.actions import OpaqueFunction
 from ament_index_python.packages import get_package_share_directory
 from launch.substitutions import Command
+from launch.actions import TimerAction
 
 def launch_setup(context, *args, **kwargs):
 
@@ -22,19 +23,12 @@ def launch_setup(context, *args, **kwargs):
 
     # ROBOT STATE PUBLISHER
     ####### DATA INPUT ##########
-    
-    #xacro_file = "barista.urdf"
-    #package_description = "barista_description"
-    #robot_desc_path = os.path.join(get_package_share_directory(package_description), "src/description/", xacro_file)
 
     xacro_file = 'mule_barista.xacro'
+
+    
     package_description = "barista_description"
     robot_desc_path = os.path.join(get_package_share_directory(package_description), "robot", xacro_file)
-
-    # Robot State Publisher
-    # We need to input namespace in xacro file
-    # xacro --inorder $(arg model) robot_name:=$(arg entity_name)
-    # xarco robot_desc_path robot_name:=entity_name
 
     robot_state_publisher_node = Node(
             package='robot_state_publisher',
@@ -46,8 +40,6 @@ def launch_setup(context, *args, **kwargs):
     )
 
 
-    # SPAWN ROBOT in GAzebo
-
     # Spawn ROBOT Set Gazebo
     start_gazebo_ros_spawner_cmd = Node(
         package='gazebo_ros',
@@ -58,9 +50,11 @@ def launch_setup(context, *args, **kwargs):
         arguments=['-entity',
                    entity_name,
                    '-x', x_spawn, '-y', y_spawn,
-                   '-topic', 'robot_description'
+                   '-topic', 'robot_description',
+                   '-timeout', '30'
                    ]
     )
+
 
 
     return [robot_state_publisher_node, start_gazebo_ros_spawner_cmd]
@@ -71,7 +65,7 @@ def generate_launch_description():
     x_spawn_arg = DeclareLaunchArgument('x_spawn', default_value='1.0')
     y_spawn_arg = DeclareLaunchArgument('y_spawn', default_value='2.0')
     entity_name_arg = DeclareLaunchArgument('entity_name', default_value='barista_1')
-
+    
 
     return LaunchDescription([
         x_spawn_arg,

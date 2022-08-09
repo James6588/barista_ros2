@@ -25,7 +25,8 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>        
-          <mesh filename="package://barista_description/meshes/barista/TOP_collision_lip_sd.stl"/>
+          <mesh filename="package://barista_description/meshes/barista/TOP_collision_lip.stl"/>
+          <!-- <cylinder length="0.085" radius="0.1760015"/> -->
         </geometry>
       </collision>
       <inertial>
@@ -59,6 +60,12 @@
           </xacro:if>          
         </geometry>
       </visual>  
+      <collision>
+        <origin xyz="0 0 -0.07" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="0.14" radius="0.1760015"/>
+        </geometry>
+      </collision>
       <inertial>
         <mass value="0.1" />
         <origin xyz="0 0 0" />
@@ -70,7 +77,7 @@
     
     
     <joint name="barista_bottom_joint" type="fixed">
-      <origin xyz="0.001 0.0 0.12" rpy="0 0 0"/>
+      <origin xyz="-0.00364 0.0 0.1874" rpy="0 0 0"/>
       <parent link="${bottom_parent}"/>
       <child link="barista_bottom_link"/>
     </joint> 
@@ -95,7 +102,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://barista_description/meshes/barista/TOP_mule_col_sd.stl"/>
+          <mesh filename="package://barista_description/meshes/barista/TOP_mule_col.stl"/>
         </geometry>
       </collision>
       <inertial>
@@ -108,7 +115,7 @@
     </link>
     
     <joint name="barista_top_joint" type="fixed">
-      <origin xyz="0.00364 0.0 0.24583" rpy="0 0 0"/>
+      <origin xyz="0.00364 0.0 0.3966" rpy="0 0 0"/>
       <parent link="${top_parent}"/>
       <child link="barista_top_link"/>
     </joint>
@@ -121,6 +128,12 @@
           <mesh filename="package://barista_description/meshes/barista/BOTTOM_mule.dae"/>
         </geometry>
       </visual>  
+      <collision>
+        <origin xyz="0 0 -0.07" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="0.14" radius="0.1760015"/>
+        </geometry>
+      </collision>
       <inertial>
         <mass value="0.1" />
         <origin xyz="0 0 0" />
@@ -132,7 +145,7 @@
     
     
     <joint name="barista_bottom_joint" type="fixed">
-      <origin xyz="0.001 0.0 0.12" rpy="0 0 0"/>
+      <origin xyz="-0.00364 0.0 0.1874" rpy="0 0 0"/>
       <parent link="${bottom_parent}"/>
       <child link="barista_bottom_link"/>
     </joint> 

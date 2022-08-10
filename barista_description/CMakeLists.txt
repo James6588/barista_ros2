@@ -28,7 +28,7 @@ if(BUILD_TESTING)
 endif()
 
 install(PROGRAMS
-  launch/spawn_barista.py
+  launch/spawn.launch.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

@@ -51,7 +51,7 @@ def launch_setup(context, *args, **kwargs):
                    entity_name,
                    '-x', x_spawn, '-y', y_spawn,
                    '-topic', 'robot_description',
-                   '-timeout', '30'
+                   '-timeout', '120.0'
                    ]
     )
 

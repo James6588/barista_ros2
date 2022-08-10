@@ -30,8 +30,6 @@ def generate_launch_description():
     gazebo_plugins_name = "gazebo_plugins"
     gazebo_plugins_name_path_install_dir = get_package_prefix(gazebo_plugins_name)
 
-    plugin_pkg = "rmf_robot_sim_gazebo_plugins"
-    plugin_dir = get_package_prefix(plugin_pkg)
     
 
     if 'GAZEBO_MODEL_PATH' in os.environ:
@@ -40,9 +38,9 @@ def generate_launch_description():
         os.environ['GAZEBO_MODEL_PATH'] =  install_dir + "/share" + ':' + extra_models_path
 
     if 'GAZEBO_PLUGIN_PATH' in os.environ:
-        os.environ['GAZEBO_PLUGIN_PATH'] = os.environ['GAZEBO_PLUGIN_PATH'] + ':' + install_dir + '/lib' + ':' + gazebo_plugins_name_path_install_dir + '/lib' + ':' + plugin_dir + '/lib' + '/rmf_robot_sim_gazebo_plugins'
+        os.environ['GAZEBO_PLUGIN_PATH'] = os.environ['GAZEBO_PLUGIN_PATH'] + ':' + install_dir + '/lib' + ':' + gazebo_plugins_name_path_install_dir + '/lib'
     else:
-        os.environ['GAZEBO_PLUGIN_PATH'] = install_dir + '/lib' + ':' + gazebo_plugins_name_path_install_dir + '/lib' + ':' + plugin_dir + '/lib' + '/rmf_robot_sim_gazebo_plugins'
+        os.environ['GAZEBO_PLUGIN_PATH'] = install_dir + '/lib' + ':' + gazebo_plugins_name_path_install_dir + '/lib' 
 
     print("GAZEBO MODELS PATH=="+str(os.environ["GAZEBO_MODEL_PATH"]))
     print("GAZEBO PLUGINS PATH=="+str(os.environ["GAZEBO_PLUGIN_PATH"]))

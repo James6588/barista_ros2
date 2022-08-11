@@ -41,11 +41,11 @@
     
     <joint name="${robot_name}/joint_tire_left" type="continuous">
     <parent link="base_link"/>
-    <child link="${robot_name}/wheel_left_link"/>
+    <child link="wheel_left_link"/>
     <origin rpy="-1.5707963267948966 0 0" xyz="0.00 0.115 0.0250"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <link name="${robot_name}/wheel_left_link">
+  <link name="wheel_left_link">
     <visual>
       <geometry>
         <mesh filename="package://barista_description/meshes/wheel.dae"/>
@@ -66,11 +66,11 @@
   </link>
   <joint name="${robot_name}/joint_tire_right" type="continuous">
     <parent link="base_link"/>
-    <child link="${robot_name}/wheel_right_link"/>
+    <child link="wheel_right_link"/>
     <origin rpy="-1.5707963267948966 0 0" xyz="0.00 -0.115 0.0250"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <link name="${robot_name}/wheel_right_link">
+  <link name="wheel_right_link">
     <visual>
       <geometry>
         <mesh filename="package://barista_description/meshes/wheel.dae"/>

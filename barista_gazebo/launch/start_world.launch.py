@@ -55,7 +55,7 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(
           'world',
-          default_value=[os.path.join(pkg_box_bot_gazebo, 'worlds', 'turtlebot3_world_empty.world'), ''],
+          default_value=[os.path.join(pkg_box_bot_gazebo, 'worlds', 'tc_coffeeshop.world'), ''],
           description='SDF world file'),
         DeclareLaunchArgument(
             'verbose', default_value='true',

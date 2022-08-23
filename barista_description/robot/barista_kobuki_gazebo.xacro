@@ -58,7 +58,7 @@
 	    <sensor type="ray" name="cliff_sensor_left">
 	      <always_on>true</always_on>
 	      <update_rate>50</update_rate>
-	      <visualize>false</visualize>
+	      <visualize>true</visualize>
 	      <ray>
 	        <scan>
 	          <horizontal>
@@ -81,7 +81,7 @@
 	    <sensor type="ray" name="cliff_sensor_right">
 	      <always_on>true</always_on>
 	      <update_rate>50</update_rate>
-	      <visualize>false</visualize>
+	      <visualize>true</visualize>
 	      <ray>
 	        <scan>
 	          <horizontal>
@@ -104,7 +104,7 @@
 	    <sensor type="ray" name="cliff_sensor_front">
 	      <always_on>true</always_on>
 	      <update_rate>50</update_rate>
-	      <visualize>false</visualize>
+	      <visualize>true</visualize>
 	      <ray>
 	        <scan>
 	          <horizontal>

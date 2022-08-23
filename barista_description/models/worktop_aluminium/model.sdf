@@ -20,7 +20,6 @@
         <geometry>
           <mesh>
             <uri>model://worktop_aluminium/meshes/worktop_aluminium.dae</uri>
-            <scale>0.6 0.8 1</scale>
           </mesh>
         </geometry>
       </collision>
@@ -28,7 +27,6 @@
         <geometry>
           <mesh>
             <uri>model://worktop_aluminium/meshes/worktop_aluminium.dae</uri>
-            <scale>0.6 0.8 1</scale>
           </mesh>
         </geometry>
       </visual>

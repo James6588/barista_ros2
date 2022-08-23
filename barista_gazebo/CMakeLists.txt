@@ -16,7 +16,13 @@ install(
   DIRECTORY 
   launch
   worlds
+  scripts
   DESTINATION share/${PROJECT_NAME}
+)
+
+install(PROGRAMS
+  scripts/battery_state_sim_barista_v2.py
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 if(BUILD_TESTING)

@@ -39,7 +39,14 @@ def launch_setup(context, *args, **kwargs):
         output="screen"
     )
 
-
+    joint_state_publisher_node = Node(
+            package='joint_state_publisher',
+            executable='joint_state_publisher',
+            name='joint_state_publisher',
+            namespace=entity_name,
+        parameters=[{'frame_prefix': entity_name+'/', 'use_sim_time': True, 'robot_description': Command(['xacro ', robot_desc_path, ' robot_name:=', entity_name])}],
+        output="screen"
+    )
     # Spawn ROBOT Set Gazebo
     start_gazebo_ros_spawner_cmd = Node(
         package='gazebo_ros',
@@ -57,7 +64,7 @@ def launch_setup(context, *args, **kwargs):
 
 
 
-    return [robot_state_publisher_node, start_gazebo_ros_spawner_cmd]
+    return [robot_state_publisher_node, joint_state_publisher_node, start_gazebo_ros_spawner_cmd]
 
 
 def generate_launch_description(): 
